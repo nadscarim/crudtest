@@ -13,8 +13,8 @@ let mix = require('laravel-mix');
 
 mix
     .setPublicPath('public')
-    .js('src/app.js', 'dist/')
-    .sass('src/app.scss', 'dist/')
+    .react('resources/assets/js/app.js', 'dist/')
+    .sass('resources/assets/sass/app.scss', 'dist/')
 
 // Full API
 // mix.js(src, output);
