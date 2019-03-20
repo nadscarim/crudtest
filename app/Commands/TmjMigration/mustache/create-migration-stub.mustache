@@ -1,0 +1,18 @@
+'use strict'
+const Schema = use('Schema')
+
+class {{ className }} extends Schema{
+    up () {
+        this.create('{{ tableName }}', (table) => {
+            table.charset('utf8')
+            table.increments()
+            table.timestamps()
+        })
+    }
+
+    down(){
+        this.drop('{{ tableName }}')
+    }
+}
+
+module.exports = {{ className }}
