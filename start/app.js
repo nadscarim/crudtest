@@ -18,7 +18,8 @@ const providers = [
     '@adonisjs/cors/providers/CorsProvider',
     '@adonisjs/shield/providers/ShieldProvider',
     '@adonisjs/session/providers/SessionProvider',
-    '@adonisjs/auth/providers/AuthProvider'
+    '@adonisjs/auth/providers/AuthProvider',
+    '@adonisjs/antl/providers/AntlProvider',
 ]
 
 /*
@@ -59,7 +60,6 @@ const aliases = {}
 const commands = [
     'App/Commands/TmjLocale',
     'App/Commands/TmjSeed',
-    'App/Commands/TmjDropCreateMigrate',
     'App/Commands/TmjMigration/TmjMigrationUp',
     'App/Commands/TmjMigration/TmjMigrationRollBack',
     'App/Commands/TmjMigration/TmjMigrationMake',

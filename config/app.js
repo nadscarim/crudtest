@@ -5,7 +5,7 @@ const Env = use('Env')
 
 module.exports = {
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Application Name
   |--------------------------------------------------------------------------
@@ -16,9 +16,9 @@ module.exports = {
   |
   */
 
-  name: Env.get('APP_NAME', 'AdonisJs'),
+    name: Env.get('APP_NAME', 'AdonisJs'),
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | App Key
   |--------------------------------------------------------------------------
@@ -27,9 +27,9 @@ module.exports = {
   | to encrypted cookies, sessions and other sensitive data.
   |
   */
-  appKey: Env.getOrFail('APP_KEY'),
+    appKey: Env.getOrFail('APP_KEY'),
 
-  http: {
+    http: {
     /*
     |--------------------------------------------------------------------------
     | Allow Method Spoofing
@@ -41,9 +41,9 @@ module.exports = {
     | below value to true.
     |
     */
-    allowMethodSpoofing: true,
+        allowMethodSpoofing: true,
 
-    /*
+        /*
     |--------------------------------------------------------------------------
     | Trust Proxy
     |--------------------------------------------------------------------------
@@ -55,9 +55,9 @@ module.exports = {
     | values. Read documentation for that.
     |
     */
-    trustProxy: false,
+        trustProxy: false,
 
-    /*
+        /*
     |--------------------------------------------------------------------------
     | Subdomains
     |--------------------------------------------------------------------------
@@ -69,9 +69,9 @@ module.exports = {
     | virk.cheatsheet.adonisjs.com - offset - 3
     |
     */
-    subdomainOffset: 2,
+        subdomainOffset: 2,
 
-    /*
+        /*
     |--------------------------------------------------------------------------
     | JSONP Callback
     |--------------------------------------------------------------------------
@@ -80,10 +80,10 @@ module.exports = {
     | in request url.
     |
     */
-    jsonpCallback: 'callback',
+        jsonpCallback: 'callback',
 
 
-    /*
+        /*
     |--------------------------------------------------------------------------
     | Etag
     |--------------------------------------------------------------------------
@@ -94,10 +94,10 @@ module.exports = {
     | response.send('Hello', { ignoreEtag: true })
     |
     */
-    etag: false
-  },
+        etag: false
+    },
 
-  views: {
+    views: {
     /*
     |--------------------------------------------------------------------------
     | Cache Views
@@ -107,10 +107,10 @@ module.exports = {
     | production to optimize view loading time.
     |
     */
-    cache: Env.get('CACHE_VIEWS', true)
-  },
+        cache: Env.get('CACHE_VIEWS', true)
+    },
 
-  static: {
+    static: {
     /*
     |--------------------------------------------------------------------------
     | Dot Files
@@ -124,9 +124,9 @@ module.exports = {
     | ignore, deny, allow
     |
     */
-    dotfiles: 'ignore',
+        dotfiles: 'ignore',
 
-    /*
+        /*
     |--------------------------------------------------------------------------
     | ETag
     |--------------------------------------------------------------------------
@@ -134,9 +134,9 @@ module.exports = {
     | Enable or disable etag generation
     |
     */
-    etag: true,
+        etag: true,
 
-    /*
+        /*
     |--------------------------------------------------------------------------
     | Extensions
     |--------------------------------------------------------------------------
@@ -146,10 +146,10 @@ module.exports = {
     | that exists will be served. Example: ['html', 'htm'].
     |
     */
-    extensions: false
-  },
+        extensions: false
+    },
 
-  locales: {
+    locales: {
     /*
     |--------------------------------------------------------------------------
     | Loader
@@ -161,9 +161,9 @@ module.exports = {
     | file, database
     |
     */
-    loader: 'file',
+        loader: 'file',
 
-    /*
+        /*
     |--------------------------------------------------------------------------
     | Default Locale
     |--------------------------------------------------------------------------
@@ -173,10 +173,10 @@ module.exports = {
     | based on HTTP headers/query string.
     |
     */
-    locale: 'en'
-  },
+        locale: 'en'
+    },
 
-  logger: {
+    logger: {
     /*
     |--------------------------------------------------------------------------
     | Transport
@@ -188,9 +188,9 @@ module.exports = {
     | Available drivers are: `file` and `console`.
     |
     */
-    transport: 'console',
+        transport: 'console',
 
-    /*
+        /*
     |--------------------------------------------------------------------------
     | Console Transport
     |--------------------------------------------------------------------------
@@ -199,13 +199,13 @@ module.exports = {
     | and `stderr`
     |
     */
-    console: {
-      driver: 'console',
-      name: 'adonis-app',
-      level: 'info'
-    },
+        console: {
+            driver: 'console',
+            name: 'adonis-app',
+            level: 'info'
+        },
 
-    /*
+        /*
     |--------------------------------------------------------------------------
     | File Transport
     |--------------------------------------------------------------------------
@@ -216,15 +216,15 @@ module.exports = {
     | For a different directory, set an absolute path for the filename.
     |
     */
-    file: {
-      driver: 'file',
-      name: 'adonis-app',
-      filename: 'adonis.log',
-      level: 'info'
-    }
-  },
+        file: {
+            driver: 'file',
+            name: 'adonis-app',
+            filename: 'adonis.log',
+            level: 'info'
+        }
+    },
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Generic Cookie Options
   |--------------------------------------------------------------------------
@@ -234,10 +234,10 @@ module.exports = {
   | seperate settings for cookies inside `config/session.js`.
   |
   */
-  cookie: {
-    httpOnly: true,
-    sameSite: false,
-    path: '/',
-    maxAge: 7200
-  }
+    cookie: {
+        httpOnly: true,
+        sameSite: false,
+        path: '/',
+        maxAge: 7200
+    }
 }
