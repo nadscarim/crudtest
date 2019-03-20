@@ -16,4 +16,11 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+// Route.on('/').render('welcome')
+Route.get('/', ({ antl, view }) => {
+    let page = antl.formatMessage('general.title', { page: 'Welcome'})
+    console.log(page)
+    return view.render('welcome', {
+        page: 'Welcome'
+    })
+})
