@@ -1,4 +1,4 @@
-{
+module.exports = {
   // http://eslint.org/docs/rules/
   "parser": "babel-eslint",
   "parserOptions": {
@@ -23,7 +23,8 @@
 
   "globals": {
     "angular": true,
-    "inject": true
+    "inject": true,
+    "use": true // adonisjs global `use` function
   },
 
   "plugins": [
