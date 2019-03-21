@@ -17,10 +17,13 @@
 const Route = use('Route')
 
 // Route.on('/').render('welcome')
-Route.get('/', ({ antl, view }) => {
-    let page = antl.formatMessage('general.title', { page: 'Welcome'})
-    console.log(page)
-    return view.render('welcome', {
-        page: 'Welcome'
-    })
-})
+Route.get('/', ({ response }) => response.redirect('foobar'))
+
+const Helpers = use('Helpers')
+const foobar = Helpers.appRoot('routes/foobar/')
+
+// Nested route group not added in yet, as discussed at:
+// https://github.com/adonisjs/adonis-framework/issues/33
+require(foobar + 'foobar')
+
+Route.get('*', ({ response }) => response.redirect('/'))
