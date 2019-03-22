@@ -1,3 +1,1 @@
-module.exports = {
-    axios: require('./bootstrap/axios.config')
-};
+module.exports.axios = require('./bootstrap/axios.config')
