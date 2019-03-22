@@ -31,4 +31,14 @@ module.exports = {
             }
         }
     },
+    datatable: {
+        prev: 'Prev',
+        next: 'Next',
+        loading: 'Loading ...',
+        noData: 'No record(s) found.',
+        page: 'Page',
+        rows: 'rows',
+        edit: 'Edit',
+        delete: 'Delete'
+    },
 }
