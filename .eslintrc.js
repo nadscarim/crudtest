@@ -168,15 +168,15 @@ module.exports = {
     "no-space-before-semi": 0, // disallow space before semicolon
     "no-spaced-func": 0, // disallow space between function identifier and application
     "no-ternary": 0, // disallow the use of ternary operators (off by default)
-    "no-trailing-spaces": 0, // disallow trailing whitespace at the end of lines
+    "no-trailing-spaces": "error", // disallow trailing whitespace at the end of lines
     "no-underscore-dangle": 0, // disallow dangling underscores in identifiers
     "no-wrap-func": 0, // disallow wrapping of non-IIFE statements in parens
     "one-var": 0, // allow just one var statement per function (off by default)
     "operator-assignment": 0, // require assignment operator shorthand where possible or prohibit it entirely (off by default)
     "padded-blocks": 0, // enforce padding within blocks (off by default)
     "quote-props": 0, // require quotes around object literal property names (off by default)
-    "quotes": 0, // specify whether double or single quotes should be used
-    "semi": 0, // require or disallow use of semicolons instead of ASI
+    "quotes": ["error", "single"], // specify whether double or single quotes should be used
+    "semi": ["error", "never"], // require or disallow use of semicolons instead of ASI
     "sort-vars": 0, // sort variables within the same declaration block (off by default)
     "space-after-function-name": 0, // require a space after function names (off by default)
     "space-before-function-paren": 0, // replaces space-after-function-name

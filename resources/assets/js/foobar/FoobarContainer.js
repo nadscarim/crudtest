@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import TmjPrompt from '../shared/TmjPrompt'
-import axios from "../shared/bootstrap/axios.config";
+import axios from '../shared/bootstrap/axios.config'
 
 export default class FoobarContainer extends Component {
     handleClick() {
