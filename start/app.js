@@ -20,6 +20,7 @@ const providers = [
     '@adonisjs/session/providers/SessionProvider',
     '@adonisjs/auth/providers/AuthProvider',
     '@adonisjs/antl/providers/AntlProvider',
+    'adonis-mongoose-model/providers/MongooseProvider',
 ]
 
 /*

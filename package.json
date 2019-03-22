@@ -33,6 +33,7 @@
     "@adonisjs/shield": "^1.0.8",
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
+    "adonis-mongoose-model": "^3.0.1",
     "axios": "^0.18.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
