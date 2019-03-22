@@ -1,6 +1,6 @@
 /**
  * Datatable service for react-table
- * @author Rej Mediodia
+ * @author Offshore Lab
  * @copyright TMJ Engineers 2018
  */
 class DataTableService {
