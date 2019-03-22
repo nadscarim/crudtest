@@ -1,5 +1,8 @@
 'use strict'
 
+const Helpers = use('Helpers')
+const appRoot = Helpers.appRoot()
+
 /*
 |--------------------------------------------------------------------------
 | Providers
@@ -21,6 +24,11 @@ const providers = [
     '@adonisjs/auth/providers/AuthProvider',
     '@adonisjs/antl/providers/AntlProvider',
     'adonis-mongoose-model/providers/MongooseProvider',
+    appRoot + '/app/Providers/AppServiceProvider',
+    appRoot + '/app/Providers/SocketProvider',
+    appRoot + '/app/Providers/BroadcastServiceProvider',
+    appRoot + '/app/Providers/CodeGeneratorServiceProvider',
+    appRoot + '/app/Providers/JobProvider',
 ]
 
 /*
