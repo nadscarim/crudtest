@@ -2,7 +2,7 @@
 
 /**
  * A base class for broadcasting event.
- * @author Rej Mediodia
+ * @author Offshore Lab
  * @copyright TMJ Engineers @ 2018
  */
 

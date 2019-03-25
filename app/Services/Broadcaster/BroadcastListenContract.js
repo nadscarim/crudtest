@@ -2,7 +2,7 @@
 
 /**
  * A base class for listening broadcast of events.
- * @author Rej Mediodia
+ * @author Offshore Lab
  * @copyright TMJ Engineers @ 2018
  */
 

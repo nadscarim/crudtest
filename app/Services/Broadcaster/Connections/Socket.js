@@ -2,7 +2,7 @@
 
 /**
  * A Server to Client Broadcasting Service.
- * @author Rej Mediodia
+ * @author Offshore Lab
  * @copyright TMJ Engineers @ 2018
  */
 
