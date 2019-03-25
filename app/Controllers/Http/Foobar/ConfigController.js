@@ -1,6 +1,6 @@
-"use strict"
+'use strict'
 
-const Config = use("Config")
+const Config = use('Config')
 
 class ConfigController {
     async index({ response }) {
@@ -11,24 +11,25 @@ class ConfigController {
          */
         let configData = {
             shared: {
-                general: this._getGeneralConfig()
+                general: this._getGeneralConfig(),
+                socketData: Config.get('broadcaster.connections.socketio.client')
             },
             foobar: this._getFoobarConfig()
         }
 
-        let config = "config = " + JSON.stringify(configData) + ";"
-        response.header("Content-type", "text/javascript")
+        let config = 'config = ' + JSON.stringify(configData) + ';'
+        response.header('Content-type', 'text/javascript')
         response.send(config)
     }
 
     _getGeneralConfig() {
         return {
-            company: Config.get("shared.general.company"),
+            company: Config.get('shared.general.company'),
         }
     }
 
     _getFoobarConfig() {
-        let foobar = Config.get("foobar")
+        let foobar = Config.get('foobar')
 
         return {
             foobar: foobar.foobar

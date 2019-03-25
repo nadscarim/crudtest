@@ -26,4 +26,4 @@ const foobar = Helpers.appRoot('routes/foobar/')
 // https://github.com/adonisjs/adonis-framework/issues/33
 require(foobar + 'foobar')
 
-Route.get('*', ({ response }) => response.redirect('/'))
+// Route.get('*', ({ response }) => response.redirect('/'))
