@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /**
  * A Server to Client Broadcasting Service.
@@ -8,17 +8,17 @@
 
 class Socket {
     constructor(socket) {
-        this.socket = socket;
+        this.socket = socket
     }
 
     getId() {
-        return this.socket.id;
+        return this.socket.id
     }
 
     on(eventName, callback) {
         this.socket.on(eventName, (data) => {
-            callback(data, this);
-        });
+            callback(data, this)
+        })
     }
 
     off(eventName, callback) {
@@ -29,12 +29,12 @@ class Socket {
     }
 
     joinRoom(channel) {
-        this.socket.join(channel);
+        this.socket.join(channel)
     }
 
     leaveRoom(channel) {
-        this.socket.leave(channel);
+        this.socket.leave(channel)
     }
 }
 
-module.exports = Socket;
+module.exports = Socket

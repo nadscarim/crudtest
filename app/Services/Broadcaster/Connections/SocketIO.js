@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /**
  * A Server to Client Broadcasting Service.
@@ -6,38 +6,38 @@
  * @copyright TMJ Engineers @ 2018
  */
 
-const ConnectionContract = require('./ConnectionContract');
+const ConnectionContract = require('./ConnectionContract')
 // import ConnectionContract from './ConnectionContract';
-const SocketServer = require('socket.io');
-const Socket = require('./Socket');
+const SocketServer = require('socket.io')
+const Socket = require('./Socket')
 // driver
 class SocketIO extends ConnectionContract {
     constructor(serverInstance, config) { //, logger) {
-        super(serverInstance, config);
+        super(serverInstance, config)
 
-        this.listeners = [];
-        this.hooks = [];
+        this.listeners = []
+        this.hooks = []
         // this.logger = logger;
-        this.socket;
+        this.socket
 
-        serverInstance = serverInstance || config.port;
+        serverInstance = serverInstance || config.port
 
         // server options
         this.serverOptions = {...config.options, pingTimeout: 60000 }
 
-        this.io = new SocketServer(serverInstance, this.serverOptions);
+        this.io = new SocketServer(serverInstance, this.serverOptions)
         // this.io.use(() => {
 
         // });
 
         this.io.on('connection', (socket)=> {
-            this.socket = new Socket(socket);
-            console.log('someone connected to socket', this.socket.getId());
+            this.socket = new Socket(socket)
+            console.log('someone connected to socket', this.socket.getId())
             // this.logger('someone connected to socket', this.socket.getId());
-            this.listeners.map(({eventName, callback}) => this.listen(eventName, callback));
+            this.listeners.map(({eventName, callback}) => this.listen(eventName, callback))
 
-            this.hooks.map((hook) => this.addHook(hook));
-        });
+            this.hooks.map((hook) => this.addHook(hook))
+        })
     }
 
 
@@ -47,40 +47,40 @@ class SocketIO extends ConnectionContract {
      * {data} - data object to be emitted.
      */
     fire(channel, eventName, data) {
-        if (!channel) return this.io.emit(eventName, data);
+        if (!channel) return this.io.emit(eventName, data)
 
-        this.io.to(channel).emit(eventName, data);
+        this.io.to(channel).emit(eventName, data)
     }
 
     listen(eventName, callback) {
         // temporary solution to wait first if there is no socket
         if (!this.socket)
-            return this.listeners.push({eventName, callback});
+            return this.listeners.push({eventName, callback})
 
-        this.socket.on(eventName, callback);
+        this.socket.on(eventName, callback)
     }
 
     removeListener(eventName, callback) {
-        if (!this.socket) return;
-        this.socket.off(eventName, callback);
+        if (!this.socket) return
+        this.socket.off(eventName, callback)
     }
 
     getInstance() {
-        return this.io;
+        return this.io
     }
 
     getSocketInstance() {
-        return this.socket;
+        return this.socket
     }
 
     addHook(callback) {
-        if (!this.socket) return this.hooks.push(callback);
+        if (!this.socket) return this.hooks.push(callback)
 
-        console.log('added hooks');
+        console.log('added hooks')
 
-        callback(this.socket);
+        callback(this.socket)
     }
 
 }
 
-module.exports = SocketIO;
+module.exports = SocketIO

@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /**
  * A base class for broadcasting event.
@@ -13,7 +13,7 @@ class BroadcastEventContract {
      * @return {string}
      */
     connection() {
-        return undefined;
+        return undefined
     }
 
     /**
@@ -21,7 +21,7 @@ class BroadcastEventContract {
      * @return object
      */
     data() {
-        throw new Exception('please declare the data function');
+        throw new Exception('please declare the data function')
     }
 
     /**
@@ -29,7 +29,7 @@ class BroadcastEventContract {
      * @return array
      */
     broadcastOn() {
-        return;
+        return
         // throw new Exception('please declare the broadcastOn function');
     }
 
@@ -38,8 +38,8 @@ class BroadcastEventContract {
      * @return string
      */
     broadcastAs() {
-        throw new Exception('please declare the broadcastAs function');
+        throw new Exception('please declare the broadcastAs function')
     }
 }
 
-module.exports = BroadcastEventContract;
+module.exports = BroadcastEventContract

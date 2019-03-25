@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /**
  * A base class for listening broadcast of events.
@@ -13,7 +13,7 @@ class BroadcastListen {
      * @return {string}
      */
     connection() {
-        return undefined;
+        return undefined
     }
 
     /**
@@ -22,7 +22,7 @@ class BroadcastListen {
      * @param {object} instance - object socket instance
      */
     handle(data, instance) {
-        throw new Exception('please declare the channel function');
+        throw new Exception('please declare the channel function')
     }
 
     /**
@@ -30,8 +30,8 @@ class BroadcastListen {
      * @return {string}
      */
     eventName() {
-        throw new Exception('please declare the eventName function');
+        throw new Exception('please declare the eventName function')
     }
 }
 
-module.exports = BroadcastListen;
+module.exports = BroadcastListen
