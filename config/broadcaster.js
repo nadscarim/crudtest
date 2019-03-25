@@ -2,7 +2,7 @@
 
 /**
  * Server to client Broadcaster.
- * @author Rej Mediodia
+ * @author Offshore Lab
  * @copyright TMJ Engineers 2018
  */
 

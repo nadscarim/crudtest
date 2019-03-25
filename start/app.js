@@ -24,10 +24,10 @@ const providers = [
     '@adonisjs/auth/providers/AuthProvider',
     '@adonisjs/antl/providers/AntlProvider',
     'adonis-mongoose-model/providers/MongooseProvider',
-    appRoot + '/app/Providers/BroadcastServiceProvider',
     // appRoot + '/app/Providers/AppServiceProvider',
     // appRoot + '/app/Providers/SocketProvider',
-    // appRoot + '/app/Providers/CodeGeneratorServiceProvider',
+    appRoot + '/app/Providers/BroadcastServiceProvider',
+    appRoot + '/app/Providers/CodeGeneratorServiceProvider',
     // appRoot + '/app/Providers/JobProvider',
 ]
 
