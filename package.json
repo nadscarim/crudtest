@@ -36,6 +36,7 @@
     "@material-ui/icons": "^3.0.2",
     "adonis-mongoose-model": "^3.0.1",
     "axios": "^0.18.0",
+    "mysql2": "^1.6.5",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-redux": "^6.0.1",
