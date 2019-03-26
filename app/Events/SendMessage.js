@@ -22,7 +22,7 @@ class SendMessage extends BroadcastEvent {
             payload: this.message
         }
 
-        return payload
+        return this.message
     }
 
     /**

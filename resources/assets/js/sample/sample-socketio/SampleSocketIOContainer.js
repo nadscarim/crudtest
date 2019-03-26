@@ -12,10 +12,10 @@ class SampleSocketIO extends React.Component {
 
         this.socket.on('sample-event-emit', (data) => {
             console.log('received the data from server', data)
-            console.log('emitting in 10s ...')
-            setTimeout(() => {
-                this.onClick()
-            }, 10000)
+            // console.log('emitting in 10s ...')
+            // setTimeout(() => {
+            //     this.onClick()
+            // }, 10000)
         })
     }
 

@@ -6,7 +6,7 @@ class SendMessage extends BroadcastListenContract {
     handle(data, socket) {
         console.log('received data', data)
         let dataToConstructor = {
-            type: 'PUSH_MESSAGE',
+            type: 'CREATE_MESSAGE',
             payload: data.payload
         }
 
@@ -14,7 +14,7 @@ class SendMessage extends BroadcastListenContract {
     }
 
     eventName() {
-        return 'send-message'
+        return 'create-message'
     }
 }
 
