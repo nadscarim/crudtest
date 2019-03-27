@@ -23,6 +23,14 @@ let socketIoMiddleware = createSocketIoMiddleware(socket, prefix, {
 
 window.socket = socket
 
-const store = createStore(reducer, applyMiddleware(thunk, socketIoMiddleware))
+let middlewares = [thunk, socketIoMiddleware]
+
+if (process.env.NODE_ENV === 'development') {
+    let { logger } = require('redux-logger')
+
+    middlewares.push(logger)
+}
+
+const store = createStore(reducer, applyMiddleware(...middlewares))
 
 export default store
