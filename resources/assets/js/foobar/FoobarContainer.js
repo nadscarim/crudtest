@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import TmjPrompt from '../shared/TmjPrompt'
-import axios from '../shared/bootstrap/axios.config'
+import { axios } from '../shared/bootstrap'
 import SampleSocketIO from '../sample/sample-socketio/SampleSocketIOContainer'
 import SampleReduxSocketIOContainer from '../sample/sample-redux-socketio/SampleReduxSocketIOContainer'
 import SampleReactLoadableRouterContainer from '../sample/sample-react-loadable-router/SampleReactLoadableRouterContainer'
+import SampleFormDialog from '../sample/material-ui/modals/SampleFormDialog'
 
 export default class FoobarContainer extends Component {
     handleClick() {
@@ -19,6 +20,7 @@ export default class FoobarContainer extends Component {
                 {/* <SampleSocketIO /> */}
                 <SampleReduxSocketIOContainer />
                 <SampleReactLoadableRouterContainer />
+                <SampleFormDialog />
             </div>
         )
     }

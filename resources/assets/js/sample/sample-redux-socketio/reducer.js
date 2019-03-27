@@ -17,10 +17,10 @@ const strategy = {
             ]
         }
     },
-    SOCKET_CREATE_MESSAGE: (state, action) => {
-        console.log('sent')
-        return {...state, ...action.payload}
-    },
+    // SOCKET_CREATE_MESSAGE: (state, action) => {
+    //     console.log('sent')
+    //     return {...state}
+    // },
 }
 
 export default (state = initialState, action) => {
