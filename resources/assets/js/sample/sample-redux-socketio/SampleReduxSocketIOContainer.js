@@ -65,8 +65,10 @@ const App = connect(
     mapDispatchToProps
 )(SampleReduxSocketIOContainer)
 
-export default () => (
+const SampleApp = () => (
     <Provider store={store}>
         <App />
     </Provider>
 )
+
+export default SampleApp

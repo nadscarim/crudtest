@@ -1,3 +1,7 @@
+/**
+ * Example based on:
+ * https://alligator.io/react/react-loadable/#route-based-code-splitting
+ */
 import React, { Component } from 'react'
 import Loadable from 'react-loadable'
 import { Link, Route, HashRouter, Switch } from 'react-router-dom'
