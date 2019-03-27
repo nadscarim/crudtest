@@ -5,6 +5,7 @@ import SampleSocketIO from '../sample/sample-socketio/SampleSocketIOContainer'
 import SampleReduxSocketIOContainer from '../sample/sample-redux-socketio/SampleReduxSocketIOContainer'
 import SampleReactLoadableRouterContainer from '../sample/sample-react-loadable-router/SampleReactLoadableRouterContainer'
 import SampleFormDialog from '../sample/material-ui/modals/SampleFormDialog'
+import SampleTextFields from '../sample/material-ui/forms/SampleTextFields'
 
 export default class FoobarContainer extends Component {
     handleClick() {
@@ -21,6 +22,7 @@ export default class FoobarContainer extends Component {
                 <SampleReduxSocketIOContainer />
                 <SampleReactLoadableRouterContainer />
                 <SampleFormDialog />
+                <SampleTextFields />
             </div>
         )
     }
