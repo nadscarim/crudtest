@@ -7,6 +7,8 @@ import SampleReactLoadableRouterContainer from '../sample/sample-react-loadable-
 import SampleFormDialog from '../sample/material-ui/modals/SampleFormDialog'
 import SampleTextFields from '../sample/material-ui/forms/SampleTextFields'
 import SampleFormValidation from '../sample/material-ui/forms/SampleFormValidation'
+import SampleSimpleTable from '../sample/material-ui/tables/SampleSimpleTable'
+import SampleEnhancedTable from '../sample/material-ui/tables/SampleEnhancedTable'
 
 export default class FoobarContainer extends Component {
     handleClick() {
@@ -26,6 +28,8 @@ export default class FoobarContainer extends Component {
                 <SampleFormDialog />
                 <SampleTextFields />
                 <SampleFormValidation />
+                <SampleSimpleTable />
+                <SampleEnhancedTable />
             </div>
         )
     }
