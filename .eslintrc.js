@@ -24,6 +24,7 @@ module.exports = {
   "globals": {
     "angular": true,
     "inject": true,
+    "logger": true,
     "use": true // adonisjs global `use` function
   },
 

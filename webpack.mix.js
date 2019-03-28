@@ -1,4 +1,4 @@
-let mix = require('laravel-mix');
+let mix = require('laravel-mix')
 
 /*
  |--------------------------------------------------------------------------
@@ -12,6 +12,7 @@ let mix = require('laravel-mix');
  */
 
 mix
+    .webpackConfig(require('./webpack.config'))
     .setPublicPath('public')
     .sourceMaps(false)
     .react('resources/assets/js/app.js', 'dist/')

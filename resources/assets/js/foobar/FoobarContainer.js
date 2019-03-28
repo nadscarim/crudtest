@@ -16,6 +16,7 @@ export default class FoobarContainer extends Component {
     }
 
     render() {
+        logger.log('from logger')
         return (
             <div>
                 <button onClick={this.handleClick}>Click me!</button>
