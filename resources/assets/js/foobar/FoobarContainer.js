@@ -25,19 +25,18 @@ const Test = () => {
 }
 
 // dynamic import using react loadable
-const SampleSocketIO = Loadable({
-    loader: () => import('../sample/sample-socketio/SampleSocketIOContainer'),
-    loading: Loading
-})
-
+// const SampleSocketIO = Loadable({
+//     loader: () => import('../sample/sample-socketio/SampleSocketIOContainer'),
+//     loading: Loading
+// })
 const SampleReduxSocketIOContainer = Loadable({
     loader: () => import('../sample/sample-redux-socketio/SampleReduxSocketIOContainer'),
     loading: Loading
 })
-const SampleReactLoadableRouterContainer = Loadable({
-    loader: () => import('../sample/sample-react-loadable-router/SampleReactLoadableRouterContainer'),
-    loading: Loading
-})
+// const SampleReactLoadableRouterContainer = Loadable({
+//     loader: () => import('../sample/sample-react-loadable-router/SampleReactLoadableRouterContainer'),
+//     loading: Loading
+// })
 const SampleFormDialog = Loadable({
     loader: () => import('../sample/material-ui/modals/SampleFormDialog'),
     loading: Loading
@@ -66,7 +65,7 @@ export default class FoobarContainer extends Component {
                 <div>
                     <nav>
                         <li><Link to="/">Test</Link>{' '}</li>
-                        <li><Link to="/sample-socket-io">SampleSocketIO</Link>{' '}</li>
+                        {/* <li><Link to="/sample-socket-io">SampleSocketIO</Link>{' '}</li> */}
                         <li><Link to="/sample-redux-socket-io">SampleReduxSocketIOContainer</Link>{' '}</li>
                         {/* <li><Link to="/sample-react-loadable-router">SampleReactLoadableRouterContainer</Link>{' '}</li> */}
                         <li><Link to="/sample-form-dialog">SampleFormDialog</Link>{' '}</li>
@@ -78,7 +77,7 @@ export default class FoobarContainer extends Component {
                     <hr />
                     <Switch>
                         <Route exact path="/" component={Test} />
-                        <Route path="/sample-socket-io" component={SampleSocketIO} />
+                        {/* <Route path="/sample-socket-io" component={SampleSocketIO} /> */}
                         <Route path="/sample-redux-socket-io" component={SampleReduxSocketIOContainer} />
                         {/* <Route path="/sample-react-loadable-router" component={SampleReactLoadableRouterContainer} /> */}
                         <Route path="/sample-form-dialog" component={SampleFormDialog} />
