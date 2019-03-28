@@ -1,1 +1,2 @@
-module.exports.axios = require('./bootstrap/axios.config').default
+import AxiosConfig from './bootstrap/axios.config'
+export const axios = new AxiosConfig()
