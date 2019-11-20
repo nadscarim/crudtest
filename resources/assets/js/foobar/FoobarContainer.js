@@ -25,6 +25,7 @@ const Test = () => {
 }
 
 // dynamic import using react loadable
+
 // const SampleSocketIO = Loadable({
 //     loader: () => import('../sample/sample-socketio/SampleSocketIOContainer'),
 //     loading: Loading
@@ -61,23 +62,3 @@ export default class FoobarContainer extends Component {
         )
     }
 }
-
-// export default class FoobarContainer extends Component {
-
-//     render() {
-//         logger.log('from logger')
-//         return (
-//             <div>
-//                 <Test />
-//                 <SampleSocketIO />
-//                 <SampleReduxSocketIOContainer />
-//                 <SampleReactLoadableRouterContainer />
-//                 <SampleFormDialog />
-//                 <SampleTextFields />
-//                 <SampleFormValidation />
-//                 <SampleSimpleTable />
-//                 <SampleEnhancedTable />
-//             </div>
-//         )
-//     }
-// }
