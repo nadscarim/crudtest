@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import AppBar from "./shared/components/AppBar";
+import AppBar from "Shared/components/AppBar";
 import FoobarContainer from './foobar/FoobarContainer';
 
 class App extends Component {

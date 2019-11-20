@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import TmjPrompt from '../shared/TmjPrompt'
-import { axios } from '../shared/bootstrap'
+import TmjPrompt from 'Shared/TmjPrompt'
+import { axios } from 'Shared/bootstrap'
 
 import Loadable from 'react-loadable'
 import { Link, Route, HashRouter, Switch } from 'react-router-dom'
