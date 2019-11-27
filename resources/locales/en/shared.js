@@ -41,4 +41,14 @@ module.exports = {
         edit: 'Edit',
         delete: 'Delete'
     },
+    validation: {
+        header: 'Oh no!',
+        required: '{field} is required',
+        min: '{field} requires at least {value} characters',
+        equals: '{field} should match {value}',
+        email: '{field} should be a valid email',
+        locale: {
+            in: 'Translation not found'
+        }
+    },
 }
