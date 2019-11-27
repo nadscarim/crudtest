@@ -34,6 +34,7 @@
     "@adonisjs/shield": "^1.0.8",
     "@adonisjs/validator": "^5.0.6",
     "adonis-mongoose-model": "^3.0.1",
+    "availity-reactstrap-validation": "^2.6.1",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "mysql2": "^1.6.5",
