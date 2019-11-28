@@ -27,6 +27,7 @@ class TranslationController {
             copyright: Antl.get('shared.copyright'),
             prompt: Antl.get('shared.prompt'),
             datatable: Antl.get('shared.datatable'),
+            validation: Antl.get('shared.validation'),
         }
     }
 
