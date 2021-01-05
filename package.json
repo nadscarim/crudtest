@@ -35,7 +35,7 @@
     "@adonisjs/validator": "^5.0.6",
     "adonis-mongoose-model": "^3.0.1",
     "availity-reactstrap-validation": "^2.6.1",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.3.1",
     "mysql2": "^1.6.5",
     "prop-types": "^15.7.2",
@@ -43,7 +43,7 @@
     "react-dom": "^16.8.4",
     "react-loadable": "^5.5.0",
     "react-redux": "^6.0.1",
-    "react-router-dom": "^5.0.0",
+    "react-router-dom": "^5.2.0",
     "react-table": "^6.8.6",
     "reactstrap": "^8.1.1",
     "redux": "^4.0.1",
@@ -64,7 +64,7 @@
     "eslint-plugin-react": "^7.12.4",
     "laravel-mix": "^4.0.15",
     "resolve-url-loader": "^2.3.1",
-    "sass": "^1.17.3",
+    "sass": "^1.32.0",
     "sass-loader": "^7.1.0"
   },
   "autoload": {
