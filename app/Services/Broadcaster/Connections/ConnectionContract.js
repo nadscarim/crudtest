@@ -7,7 +7,6 @@
  */
 
 class ConnectionContract {
-
     fire() {
         throw new Exception('please declare the fire function')
     }

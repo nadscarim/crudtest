@@ -21,7 +21,7 @@ class DefaultPattern extends PatternContract {
         let defaultMin = this.randomConfig.min
         let defaultMax = this.randomConfig.max
         let pattern = this.config
-        let year =  (new Date().getFullYear()).toString()
+        let year = (new Date().getFullYear()).toString()
         // lastSequence = this.generateNewSequence(lastSequence);
 
         let code = [
@@ -29,7 +29,7 @@ class DefaultPattern extends PatternContract {
             pattern.types[type].code,
             year.slice(-2),
             this.generateNumber(lastSequence, pattern.types[type].pattern),
-            this.generateRandom(defaultMin, defaultMax),
+            this.generateRandom(defaultMin, defaultMax)
         ]
 
         return code.join('-')
@@ -44,7 +44,7 @@ class DefaultPattern extends PatternContract {
      */
     generateNumber(lastSequence, pattern) {
         lastSequence = lastSequence.toString()
-        let length = lastSequence.length
+        let { length } = lastSequence
         // add the new number at the end
         pattern = pattern.slice(0, length * -1)
         return pattern + lastSequence

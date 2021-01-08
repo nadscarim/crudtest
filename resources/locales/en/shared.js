@@ -3,7 +3,7 @@ module.exports = {
     copyright: '2019 TMJP Engineers',
     prompt: {
         default: {
-            title: 'Prompt',
+            title: 'Prompt'
         },
         success: {
             title: 'Saved!',
@@ -50,5 +50,5 @@ module.exports = {
         locale: {
             in: 'Translation not found'
         }
-    },
+    }
 }

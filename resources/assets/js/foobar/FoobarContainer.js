@@ -3,7 +3,9 @@ import TmjPrompt from 'Shared/TmjPrompt'
 import { axios } from 'Shared/bootstrap'
 
 import Loadable from 'react-loadable'
-import { Link, Route, HashRouter, Switch } from 'react-router-dom'
+import {
+    Link, Route, HashRouter, Switch
+} from 'react-router-dom'
 
 const Loading = ({ error }) => {
     if (error) {
@@ -45,9 +47,15 @@ export default class FoobarContainer extends Component {
             <HashRouter>
                 <div>
                     <nav>
-                        <li><Link to="/">Test</Link>{' '}</li>
+                        <li>
+                            <Link to="/">Test</Link>
+                            {' '}
+                        </li>
                         {/* <li><Link to="/sample-socket-io">SampleSocketIO</Link>{' '}</li> */}
-                        <li><Link to="/sample-redux-socket-io">SampleReduxSocketIOContainer</Link>{' '}</li>
+                        <li>
+                            <Link to="/sample-redux-socket-io">SampleReduxSocketIOContainer</Link>
+                            {' '}
+                        </li>
                         {/* <li><Link to="/sample-react-loadable-router">SampleReactLoadableRouterContainer</Link>{' '}</li> */}
                     </nav>
                     <hr />

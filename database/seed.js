@@ -7,7 +7,7 @@ module.exports = {
             // 'FakeTenantUserSeeder.js',
             'DefaultSystemUserSeeder.js',
             'DefaultOrganizationSeeder.js',
-            'DefaultTenantUserSeeder.js',
+            'DefaultTenantUserSeeder.js'
         ]
     },
 
@@ -34,5 +34,3 @@ module.exports = {
 
     }
 }
-
-

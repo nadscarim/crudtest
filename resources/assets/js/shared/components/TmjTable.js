@@ -6,7 +6,6 @@ import ReactTable from 'react-table'
 const translation = window.translations.shared.datatable
 
 class TmjTable extends React.Component {
-
     constructor(props) {
         super(props)
         // this.fetchData.bind(this);
@@ -17,8 +16,7 @@ class TmjTable extends React.Component {
     }
 
     ref(tableInstance) {
-        if (this.props.getTableInstance)
-            this.props.getTableInstance(tableInstance)
+        if (this.props.getTableInstance) this.props.getTableInstance(tableInstance)
     }
 
     fetchData(callback, data) {
@@ -67,12 +65,11 @@ class TmjTable extends React.Component {
                 loadingText={translation.loading}
                 noDataText={translation.noData}
                 pageText={translation.page}
-                ofText='/'
+                ofText="/"
                 rowsText={translation.rows}
                 getTdProps={this.props.getTdProps}
             />
         )
-
     }
 }
 

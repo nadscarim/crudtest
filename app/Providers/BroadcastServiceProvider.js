@@ -1,7 +1,7 @@
 const { ServiceProvider } = require('@adonisjs/fold')
 
 class BroadcastServiceProvider extends ServiceProvider {
-    register () {
+    register() {
         const Config = use('Config')
         let broadcastConfig = Config.get('broadcaster')
 
@@ -37,7 +37,6 @@ class BroadcastServiceProvider extends ServiceProvider {
         BroadcastEvent.addHook((socket) => {
             socket.joinRoom('sample')
         })
-
     }
 }
 

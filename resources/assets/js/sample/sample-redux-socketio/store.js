@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware } from 'redux'
 import io from 'socket.io-client'
-import reducer from './reducer'
 import thunk from 'redux-thunk'
 import createSocketIoMiddleware from 'redux-socket.io'
 import _ from 'lodash'
+import reducer from './reducer'
 
 let socket = io(window.config.shared.socketData.uri)
 let eventName = 'onHomeAction'

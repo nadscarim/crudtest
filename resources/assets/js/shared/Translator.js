@@ -10,7 +10,7 @@
 class Translator {
     // get object from js object
     trans(translation, key) {
-        if (typeof translation != 'string') {
+        if (typeof translation !== 'string') {
             return 'First parameter should be string'
         }
 
@@ -23,13 +23,12 @@ class Translator {
         let object = args[0]
 
         return this.conversion(object, key)
-
     }
 
     // replace this logic with something else
-    conversion (object, key) {
+    conversion(object, key) {
         if (key) {
-            if (typeof key != 'object') {
+            if (typeof key !== 'object') {
                 return 'Your search param should be an object'
             }
             let numberOfKeys = Object.keys(key).length

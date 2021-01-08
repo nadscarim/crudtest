@@ -1,8 +1,8 @@
-import store from './store'
-import { Provider } from 'react-redux'
+import { Provider, connect } from 'react-redux'
 
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
+
+import store from './store'
 import { fetchMessages, createMessage } from './actions'
 
 class SampleReduxSocketIOContainer extends Component {
@@ -14,7 +14,7 @@ class SampleReduxSocketIOContainer extends Component {
 
     state = this.initialState
 
-    handleSubmit = event => {
+    handleSubmit = (event) => {
         event.preventDefault()
         console.log(this.props)
         console.log(
@@ -22,7 +22,7 @@ class SampleReduxSocketIOContainer extends Component {
         )
     }
 
-    handleChange = event => {
+    handleChange = (event) => {
         this.setState({
             message: {
                 content: event.target.value
@@ -42,16 +42,14 @@ class SampleReduxSocketIOContainer extends Component {
                     <button>Send</button>
                 </form>
                 <ul>
-                    {this.props.messages.map((message, index) => {
-                        return <li key={index}>{message.content}</li>
-                    })}
+                    {this.props.messages.map((message, index) => <li key={index}>{message.content}</li>)}
                 </ul>
             </div>
         )
     }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
     ...state
 })
 

@@ -24,7 +24,7 @@ class ConfigController {
 
     _getGeneralConfig() {
         return {
-            company: Config.get('shared.general.company'),
+            company: Config.get('shared.general.company')
         }
     }
 

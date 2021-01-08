@@ -1,9 +1,9 @@
 'use strict'
+
 const DefaultPattern = require('./Pattern/DefaultPattern')
 const PatternContract = require('./Pattern/PatternContract')
 
 class PatternManager {
-
     constructor(config) {
         this.config = config
 
@@ -31,19 +31,16 @@ class PatternManager {
     }
 
     resolve(name) {
-
         // to prevent mutability
-        const config = {...this.config.pattern[name]}
+        const config = { ...this.config.pattern[name] }
 
         if (!config) throw new Error('connection configuration for', name, 'was not specified')
 
         let driver = this.sourceDrivers[name](config, this.config.default.random)
 
-        if (!(driver instanceof PatternContract))
-            throw new Error('specified driver must implement ConnectionContract')
+        if (!(driver instanceof PatternContract)) throw new Error('specified driver must implement ConnectionContract')
 
         return driver
-
     }
 
     createDefaultDriver(config, randomConfig) {

@@ -7,7 +7,6 @@
  */
 
 class BroadcastEventContract {
-
     /**
      * Connection name to be use
      * @return {string}
@@ -29,7 +28,7 @@ class BroadcastEventContract {
      * @return array
      */
     broadcastOn() {
-        return
+
         // throw new Exception('please declare the broadcastOn function');
     }
 

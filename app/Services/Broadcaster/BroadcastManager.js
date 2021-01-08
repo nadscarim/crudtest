@@ -1,4 +1,5 @@
 'use strict'
+
 /**
  * A Server to Client Broadcasting Service.
  * Inspired by Laravel Broadcasting Service
@@ -10,9 +11,8 @@ const SocketIODriver = require('./Connections/SocketIO')
 const ConnectionContract = require('./Connections/ConnectionContract')
 
 class BroadcastManager {
-
     constructor(config, serverInstance) {
-        this.config = {...config}
+        this.config = { ...config }
         this.serverInstance = serverInstance
         // contain the list of established connection
         this.establishedConnection = {}
@@ -57,7 +57,7 @@ class BroadcastManager {
 
     resolve(name) {
         // to prevent mutability
-        let config = {...this.config['connections'][name]}
+        let config = { ...this.config.connections[name] }
 
         if (!config) throw new Error('connection configuration for', name, 'was not specified')
 
@@ -66,8 +66,7 @@ class BroadcastManager {
             // if no custom connection specified search for the default connections
             : this.defaultDrivers[config.driver](config)
 
-        if (!(driver instanceof ConnectionContract))
-            throw new Error('specified driver must implement ConnectionContract')
+        if (!(driver instanceof ConnectionContract)) throw new Error('specified driver must implement ConnectionContract')
 
         return driver
     }

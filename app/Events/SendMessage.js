@@ -1,8 +1,6 @@
-
 const BroadcastEvent = use('App/Services/Broadcaster/BroadcastEventContract')
 
 class SendMessage extends BroadcastEvent {
-
     constructor(data) {
         super()
         console.log('constructing event data', data)

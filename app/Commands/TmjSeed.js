@@ -1,22 +1,21 @@
 'use strict'
+
 const requireAll = require('require-all')
 const _ = require('lodash')
 const fs = require('fs')
 const { ioc } = require('@adonisjs/fold')
 const prettyHrTime = require('pretty-hrtime')
+const { Command } = require('@adonisjs/ace')
 const SeedFiles = require('../../database/seed')
 
-
-const { Command } = require('@adonisjs/ace')
-
 class TmjSeed extends Command {
-    constructor (Helpers, Database) {
+    constructor(Helpers, Database) {
         super()
         this._seedsPath = Helpers.seedsPath()
         this.Database = Database
     }
 
-    _getSeedFiles (selectedFiles, path) {
+    _getSeedFiles(selectedFiles, path) {
         return requireAll({
             dirname: this._seedsPath + '/' + path,
             filter: (fileName) => {
@@ -33,46 +32,46 @@ class TmjSeed extends Command {
     _getSeedFilesInOrder(directory) {
         let filesToBeSeeded = (!directory)
             ? this._withoutDirectory()
-            : this._withDirectory(directory);
-        return filesToBeSeeded;
+            : this._withDirectory(directory)
+        return filesToBeSeeded
     }
 
     _withDirectory(directory) {
-        let path = this._seedsPath + '/' + directory;
-        return this._validateFiles(directory, path);
+        let path = this._seedsPath + '/' + directory
+        return this._validateFiles(directory, path)
     }
 
     _withoutDirectory() {
-        let filesToBeSeeded = {};
+        let filesToBeSeeded = {}
 
         for (let dir in SeedFiles) {
-            let directory = SeedFiles[dir].directory;
-            Object.assign(filesToBeSeeded, this._withDirectory(directory));
+            let { directory } = SeedFiles[dir]
+            Object.assign(filesToBeSeeded, this._withDirectory(directory))
         }
 
-        return filesToBeSeeded;
+        return filesToBeSeeded
     }
 
     _validateFiles(directory, path) {
-        if (!fs.existsSync(path)) return;
+        if (!fs.existsSync(path)) return
 
-        let allFiles = SeedFiles[directory].files;
-        let filesToBeSeeded = {};
+        let allFiles = SeedFiles[directory].files
+        let filesToBeSeeded = {}
 
         for (let file of allFiles) {
-            filesToBeSeeded[file] = require(path + '/' + file);
+            filesToBeSeeded[file] = require(path + '/' + file)
         }
 
-        return filesToBeSeeded;
+        return filesToBeSeeded
     }
 
-    _validateState (force) {
+    _validateState(force) {
         if (process.env.NODE_ENV === 'production' && !force) {
             throw new Error('Cannot run seeds in production. Use --force flag to continue')
         }
     }
 
-    static get signature () {
+    static get signature() {
         return `tmj:seed
         { directory? : Directory for series seeding }
         { -f, --force: Forcefully seed database in production }
@@ -82,16 +81,17 @@ class TmjSeed extends Command {
         `
     }
 
-    static get description () {
+    static get description() {
         return 'Tell something helpful about this command'
     }
 
-    static get inject () {
+    static get inject() {
         return ['Adonis/Src/Helpers', 'Adonis/Src/Database']
     }
 
-
-    async handle (args, { force, files, keepAlive, path }) {
+    async handle(args, {
+        force, files, keepAlive, path
+    }) {
         let allFiles = {}
         try {
             this._validateState(force)
@@ -100,16 +100,15 @@ class TmjSeed extends Command {
 
             files = typeof (files) === 'string' ? files.split(',') : null
 
-            path ?
-                allFiles = this._getSeedFiles(files, path) :
-                allFiles = this._getSeedFilesInOrder(args.directory)
+            path
+                ? allFiles = this._getSeedFiles(files, path)
+                : allFiles = this._getSeedFilesInOrder(args.directory)
 
             if (!_.size(allFiles)) {
                 return this.viaAce ? this.info('Nothing to seed') : 'Nothing to seed'
             }
 
             for (const file of _.keys(allFiles)) {
-
                 const seedInstance = ioc.make(allFiles[file])
                 this.info('File: ', file)
                 if (typeof (seedInstance.run) === 'function') {
@@ -130,7 +129,7 @@ class TmjSeed extends Command {
        * not passed
        */
         if (!keepAlive) {
-            this.info('Database is now closed.');
+            this.info('Database is now closed.')
             this.Database.close()
         }
     }

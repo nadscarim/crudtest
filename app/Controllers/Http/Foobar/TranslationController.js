@@ -1,14 +1,12 @@
 'use strict'
 
 class TranslationController {
-
     async index({ antl, response }) {
-
         // to do: locale switching
 
         let translationData = {
             foobar: this._getFoobarTranslation(antl),
-            shared: this._getSharedTranslation(antl),
+            shared: this._getSharedTranslation(antl)
         }
 
         let translations = 'translations = ' + JSON.stringify(translationData) + ';'
@@ -27,10 +25,9 @@ class TranslationController {
             copyright: Antl.get('shared.copyright'),
             prompt: Antl.get('shared.prompt'),
             datatable: Antl.get('shared.datatable'),
-            validation: Antl.get('shared.validation'),
+            validation: Antl.get('shared.validation')
         }
     }
-
 }
 
 module.exports = TranslationController

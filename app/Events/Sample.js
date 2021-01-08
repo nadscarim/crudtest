@@ -1,8 +1,6 @@
-
 const BroadcastEvent = use('App/Services/Broadcaster/BroadcastEventContract')
 
 class Sample extends BroadcastEvent {
-
     constructor(data) {
         super()
         console.log('constructing event data', data)

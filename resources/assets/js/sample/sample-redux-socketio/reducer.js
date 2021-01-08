@@ -4,9 +4,7 @@ const initialState = {
 
 // each strategy returns a new state
 const strategy = {
-    FETCH_MESSAGES: (state, action) => {
-        return {...state, ...action.payload}
-    },
+    FETCH_MESSAGES: (state, action) => ({ ...state, ...action.payload }),
     CREATE_MESSAGE: (state, action) => {
         console.log('received')
         return {
@@ -16,7 +14,7 @@ const strategy = {
                 action.payload
             ]
         }
-    },
+    }
     // SOCKET_CREATE_MESSAGE: (state, action) => {
     //     console.log('sent')
     //     return {...state}
