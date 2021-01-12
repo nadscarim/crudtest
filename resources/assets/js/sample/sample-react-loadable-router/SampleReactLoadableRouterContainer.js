@@ -4,7 +4,9 @@
  */
 import React, { Component } from 'react'
 import Loadable from 'react-loadable'
-import { Link, Route, HashRouter, Switch } from 'react-router-dom'
+import {
+    Link, Route, HashRouter, Switch
+} from 'react-router-dom'
 
 // static import
 import Dashboard from './components/Dashboard'
@@ -12,9 +14,8 @@ import Dashboard from './components/Dashboard'
 const Loading = ({ error }) => {
     if (error) {
         return 'Oh nooess!'
-    } else {
-        return <h3>Loading...</h3>
     }
+    return <h3>Loading...</h3>
 }
 
 // dynamic import using react loadable
@@ -34,8 +35,10 @@ class SampleReactLoadableRouterContainer extends Component {
             <HashRouter>
                 <div>
                     <nav>
-                        <Link to="/">Dashboard</Link>{' '}
-                        <Link to="/settings">Settings</Link>{' '}
+                        <Link to="/">Dashboard</Link>
+                        {' '}
+                        <Link to="/settings">Settings</Link>
+                        {' '}
                         <Link to="/add-user">Add User</Link>
                     </nav>
                     <hr />

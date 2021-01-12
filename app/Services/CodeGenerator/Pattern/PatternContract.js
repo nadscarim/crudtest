@@ -1,8 +1,6 @@
 'use strict'
 
-
 class PatternContract {
-
     generateNewSequence(lastSequence, records) {
         throw new Exception('please declare the generateNewSequence function')
     }
@@ -10,7 +8,6 @@ class PatternContract {
     produce(type, lastSequence, config) {
         throw new Exception('please declare the produce function')
     }
-
 }
 
 module.exports = PatternContract

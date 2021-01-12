@@ -1,8 +1,7 @@
-const BroadcastListenContract = use ('App/Services/Broadcaster/BroadcastListenContract')
+const BroadcastListenContract = use('App/Services/Broadcaster/BroadcastListenContract')
 const BroadcastEvent = use('BroadcastEvent')
 const SampleEvent = use('App/Events/Sample')
 class Sample extends BroadcastListenContract {
-
     handle(data, socket) {
         console.log('received data', data)
         let dataToConstructor = {

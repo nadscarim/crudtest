@@ -9,12 +9,10 @@ class MessageService {
     }
 
     async send() {
-
-        let newMessage = {foo: 'bar'}
+        let newMessage = { foo: 'bar' }
 
         BroadcastEvent.fire(new SendMessageEvent(newMessage))
     }
-
 }
 
 module.exports = MessageService

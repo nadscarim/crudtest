@@ -28,7 +28,7 @@ const providers = [
     // appRoot + '/app/Providers/AppServiceProvider',
     // appRoot + '/app/Providers/SocketProvider',
     appRoot + '/app/Providers/BroadcastServiceProvider',
-    appRoot + '/app/Providers/CodeGeneratorServiceProvider',
+    appRoot + '/app/Providers/CodeGeneratorServiceProvider'
     // appRoot + '/app/Providers/JobProvider',
 ]
 
@@ -78,4 +78,6 @@ const commands = [
     'App/Commands/TmjMigration/TmjMigrationRefresh'
 ]
 
-module.exports = { providers, aceProviders, aliases, commands }
+module.exports = {
+    providers, aceProviders, aliases, commands
+}

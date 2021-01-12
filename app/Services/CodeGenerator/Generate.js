@@ -1,4 +1,5 @@
 'use strict'
+
 /**
  * Generator of code
  * @author Offshore Lab
@@ -20,12 +21,8 @@ class Generate {
         let code = pattern.produce(type, newSequence, config)
 
         return {
-            getSequence: () =>{
-                return newSequence
-            },
-            getCode: () => {
-                return code
-            }
+            getSequence: () => newSequence,
+            getCode: () => code
         }
     }
 }

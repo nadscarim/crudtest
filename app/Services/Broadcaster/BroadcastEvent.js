@@ -1,4 +1,5 @@
 'use strict'
+
 /**
  * A Server to Client Broadcasting Service.
  * @author Offshore Lab
@@ -15,8 +16,7 @@ class BroadcastEvent {
     }
 
     fire(eventClass) {
-        if (!(eventClass instanceof BroadcastEventContract))
-            throw new Error('Event should be an instance of BroadcastEventContract')
+        if (!(eventClass instanceof BroadcastEventContract)) throw new Error('Event should be an instance of BroadcastEventContract')
 
         // get the connection where to fire the event.
         let connection = this.manager.connection(eventClass.connection())
@@ -24,13 +24,12 @@ class BroadcastEvent {
         connection.fire(
             eventClass.broadcastOn(),
             eventClass.broadcastAs(),
-            eventClass.data(),
+            eventClass.data()
         )
     }
 
     listen(listenClass) {
-        if (!(listenClass instanceof BroadcastListenContract))
-            throw new Error('Event should be an instance of BroadcastListenContract')
+        if (!(listenClass instanceof BroadcastListenContract)) throw new Error('Event should be an instance of BroadcastListenContract')
 
         // get the connection where to fire the event.
         let connection = this.manager.connection(listenClass.connection())
@@ -42,8 +41,7 @@ class BroadcastEvent {
     }
 
     removeListener(listenClass) {
-        if (!(listenClass instanceof BroadcastListenContract))
-            throw new Error('Event should be an instance of BroadcastListenContract')
+        if (!(listenClass instanceof BroadcastListenContract)) throw new Error('Event should be an instance of BroadcastListenContract')
 
         // get the connection where to fire the event.
         let connection = this.manager.connection(listenClass.connection())
@@ -59,7 +57,7 @@ class BroadcastEvent {
         const options = {
             recursive: true
         }
-        this.config.listeners.map((listenerPath)=>{
+        this.config.listeners.map((listenerPath) => {
             let listeners = requireAll({
                 dirname: rootPath + listenerPath,
                 ...options

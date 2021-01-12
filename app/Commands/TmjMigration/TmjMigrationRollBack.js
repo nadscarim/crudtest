@@ -1,25 +1,25 @@
 'use strict'
 
-const  BaseMigration = require('@adonisjs/lucid/commands/BaseMigration')
+const BaseMigration = require('@adonisjs/lucid/commands/BaseMigration')
 const requireAll = require('require-all')
 const prettyHrTime = require('pretty-hrtime')
 
 class TmjMigrationRollBack extends BaseMigration {
-    static get signature () {
+    static get signature() {
         return `tmj-migration-rollback {
           --folder=@value : Folder of the migration,
         }`
     }
 
-    static get description () {
+    static get description() {
         return 'Rollback migration on specified folder'
     }
-    
-    async handle (args, options) {
-        const startTime = process.hrtime()       
+
+    async handle(args, options) {
+        const startTime = process.hrtime()
         this.filepath = path.resolve(this._migrationsPath, options.folder)
         const { migrated, status } = await this.migration.down(this._getSchemaFiles())
-        
+
         if (status === 'completed') {
             const endTime = process.hrtime(startTime)
             migrated.forEach((name) => this.completed('migrate', `${name}.js`))
@@ -27,7 +27,7 @@ class TmjMigrationRollBack extends BaseMigration {
         }
     }
 
-    _getSchemaFiles () {
+    _getSchemaFiles() {
         return requireAll({
             dirname: this.filepath,
             filters: /(.*)\.js$/

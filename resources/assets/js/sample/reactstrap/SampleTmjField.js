@@ -7,7 +7,7 @@ export class SampleTmjField extends Component {
         name: ''
     }
 
-    handleInputChange = event => {
+    handleInputChange = (event) => {
         let { name, value } = event.target
         this.setState({ [name]: value })
     }
@@ -17,9 +17,9 @@ export class SampleTmjField extends Component {
             <div>
                 <AvForm>
                     <TmjField
-                        type='text'
-                        name='name'
-                        label='Name'
+                        type="text"
+                        name="name"
+                        label="Name"
                         value={this.state.name}
                         onChange={this.handleInputChange}
                         rules={{

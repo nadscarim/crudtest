@@ -16,9 +16,9 @@ class MongoDataTableService {
 
         let query = {}
 
-        filters.forEach((element)=>{
-            if (typeof element.value == 'object') {
-                query[element.id] = { $in: element.value}
+        filters.forEach((element) => {
+            if (typeof element.value === 'object') {
+                query[element.id] = { $in: element.value }
                 return
             }
             query[element.id] = new RegExp(element.value, 'i')
@@ -31,7 +31,7 @@ class MongoDataTableService {
 
         let sort = {}
 
-        sorts.forEach((element)=>{
+        sorts.forEach((element) => {
             sort[element.id] = 1
             if (element.desc) {
                 sort[element.id] = -1
@@ -57,27 +57,26 @@ class MongoDataTableService {
          */
         // let fetchedData = await this.getMysqlData();
 
-        let count = await this.model.count({organization_code: this.orgCode})
+        let count = await this.model.count({ organization_code: this.orgCode })
 
-        let filters = this.getFilters(this.params['filtered'])
+        let filters = this.getFilters(this.params.filtered)
         let query = {
             organization_code: this.orgCode,
             ...filters
         }
 
-        let sort = this.getSorts(this.params['sorted'])
+        let sort = this.getSorts(this.params.sorted)
         let datatable = await this.model
             .find(query)
-            .skip(this.params['pageSize'] * this.params['page'])
-            .limit(this.params['pageSize'])
+            .skip(this.params.pageSize * this.params.page)
+            .limit(this.params.pageSize)
             .sort(sort)
         return {
             lists: datatable,
             // pages: Math.ceil(Math.ceil(count / this.params['pageSize']))
-            pages: Math.ceil(count / this.params['pageSize'])
+            pages: Math.ceil(count / this.params.pageSize)
         }
     }
-
 }
 
 module.exports = MongoDataTableService

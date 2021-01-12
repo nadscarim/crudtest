@@ -7,7 +7,6 @@
  */
 
 class BroadcastListen {
-
     /**
      * Connection name to be use
      * @return {string}

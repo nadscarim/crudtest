@@ -37,7 +37,7 @@ module.exports = {
              */
             port: ENV.get('SOCKET_PORT', '9000'),
             options: {},
-            middlewares: [],
+            middlewares: []
         }
     }
 }

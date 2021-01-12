@@ -14,9 +14,7 @@ class AxiosConfig {
     }
 
     setInterceptor() {
-        this.axios.interceptors.response.use((response) => {
-            return response
-        }, this._setErrorInterceptor)
+        this.axios.interceptors.response.use((response) => response, this._setErrorInterceptor)
     }
 
     _setErrorInterceptor(error) {
@@ -28,10 +26,8 @@ class AxiosConfig {
     }
 
     _handleErrorMessage(error) {
-        if (error.response)
-            return this.showError(error.response.data)
-        if (error.request)
-            return this.showError(error.request)
+        if (error.response) return this.showError(error.response.data)
+        if (error.request) return this.showError(error.request)
         return this.showError(error.message)
     }
 

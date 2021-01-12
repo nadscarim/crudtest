@@ -1,6 +1,6 @@
 const GeneratorSourceContract = require('./GeneratorSourceContract')
-class LucidModel extends GeneratorSourceContract {
 
+class LucidModel extends GeneratorSourceContract {
     constructor(config) {
         super(config)
         this.config = config
@@ -10,14 +10,13 @@ class LucidModel extends GeneratorSourceContract {
 
     // const CodeGenerator = use('CodeGenerator');
     async produce(type) {
-
         // get first if there is existing generated code
-        let year =  (new Date().getFullYear()).toString()
+        let year = (new Date().getFullYear()).toString()
         let generatedCode = await this.model.query().where('type', type)
             .where('year', year).first()
 
         if (!generatedCode) {
-            generatedCode = new this.model
+            generatedCode = new this.model()
             generatedCode.year = year
             generatedCode.last_sequence = 0
             generatedCode.type = type
@@ -27,14 +26,14 @@ class LucidModel extends GeneratorSourceContract {
 
         await generatedCode.save()
 
-        let pattern = this.config.pattern
+        let { pattern } = this.config
 
         let code = [
             pattern.station,
             pattern.types[type].code,
             year.slice(-2),
             this.generateNumber(newNumber, pattern.types[type].pattern),
-            this.generateRandom(1000, 100000),
+            this.generateRandom(1000, 100000)
         ]
 
         return code.join('-')
@@ -42,7 +41,7 @@ class LucidModel extends GeneratorSourceContract {
 
     generateNumber(newNumber, pattern) {
         newNumber = newNumber.toString()
-        let length = newNumber.length
+        let { length } = newNumber
         pattern = pattern.slice(0, length * -1)
         return pattern + newNumber
     }

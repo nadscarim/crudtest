@@ -1,6 +1,5 @@
 const { ServiceProvider } = require('@adonisjs/fold')
 
-
 class SocketProvider extends ServiceProvider {
     // remove -- old socket provider
     // currently using BroadcastServiceProvider

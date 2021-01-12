@@ -1,6 +1,7 @@
 'use strict'
 
 const { Command } = require('@adonisjs/ace')
+
 const Helpers = use('Helpers')
 const Antl = use('Antl')
 const _ = require('lodash')
@@ -8,7 +9,7 @@ const fs = require('fs')
 const path = require('path')
 
 class Locale extends Command {
-    static get signature () {
+    static get signature() {
         return `
           tmj:locale-fill
           { code?=en : Specify code name of source folder. Default is 'en'}
@@ -16,11 +17,11 @@ class Locale extends Command {
         `
     }
 
-    static get description () {
+    static get description() {
         return 'Copy locale directory and contents to other locales'
     }
 
-    async handle (args, flags) {
+    async handle(args, flags) {
         // get all available locales
         let { code } = args
         let localePath = Helpers.resourcesPath('locales/')
@@ -30,9 +31,9 @@ class Locale extends Command {
 
         // assign source
         let sourcePath = localePath + code
-        
+
         // loop over every abailable locale found
-        availableLocales.forEach(localeDestDir => {
+        availableLocales.forEach((localeDestDir) => {
             let destPath = localePath + localeDestDir
 
             if (flags.overwrite) {
@@ -41,18 +42,17 @@ class Locale extends Command {
             }
 
             this.info('copying over to', localeDestDir, '...')
-            this._copyOrAdd(sourcePath, destPath);
-            
+            this._copyOrAdd(sourcePath, destPath)
         })
-        
+
         this.info('locales filled')
     }
 
     _copyOrAdd(sourcePath, destPath) {
-        let sourceLocale = require("require-all")(sourcePath)
-        let destLocale = require("require-all")(destPath)
-        
-        Object.keys(sourceLocale).forEach(key => {
+        let sourceLocale = require('require-all')(sourcePath)
+        let destLocale = require('require-all')(destPath)
+
+        Object.keys(sourceLocale).forEach((key) => {
             // where key is the fileName
             let sourceFilePath = path.resolve(sourcePath, key + '.js')
             let destFilePath = path.resolve(destPath, key + '.js')
@@ -66,11 +66,11 @@ class Locale extends Command {
 
             let defaultObject = sourceLocale[key]
             let destObject = destLocale[key]
-            
+
             this._compareContent(defaultObject, destObject, destFilePath)
         })
     }
-    
+
     _overWriteAll(sourcePath, destPath) {
         this.copy(sourcePath, destPath)
     }
@@ -80,28 +80,27 @@ class Locale extends Command {
         // let missingValues = _.pick(sourceObject, test)
         let newLocaleObject = _.defaultsDeep(destObject, sourceObject)
         let content = 'module.exports = ' + JSON.stringify(newLocaleObject, null, 4) + ';'
-        fs.writeFileSync(pathOfDestFile, content, {encoding: 'utf8'})
+        fs.writeFileSync(pathOfDestFile, content, { encoding: 'utf8' })
     }
 
     _findMissingValue(sourceObject, destObject) {
         let missingKeysArray = []
         for (let contentKey in sourceObject) {
         // check if not equal value or does not exist
-            
-            if (sourceObject[contentKey] != null  && typeof (sourceObject[contentKey]) === 'object') {
+
+            if (sourceObject[contentKey] != null && typeof (sourceObject[contentKey]) === 'object') {
                 if (!destObject[contentKey]) {
-                    this.info('Missing property for',  contentKey, 'has been added')
+                    this.info('Missing property for', contentKey, 'has been added')
                     destObject[contentKey] = this._findMissingValue(sourceObject[contentKey], destObject)
                     missingKeysArray.push(contentKey)
                 }
-            } 
-            else { 
-                this.info('Missing property for',  contentKey, 'has been added')
+            } else {
+                this.info('Missing property for', contentKey, 'has been added')
                 destObject[contentKey] = sourceObject[contentKey]
                 missingKeysArray.push(contentKey)
-            }  
+            }
         }
-        return missingKeysArray;
+        return missingKeysArray
     }
 }
 

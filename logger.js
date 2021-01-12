@@ -8,7 +8,7 @@ module.exports = new Proxy(console, {
             return typeof target[name] === 'function' ? new Function() : undefined
         }
         return target[name]
-    },
+    }
     // set: (target, name, value) => {
     //     if (!(name in target)) {
     //         console.log('Setting non-existant property \'' + name + '\', initial value: ' + value)

@@ -6,27 +6,28 @@
  */
 
 'use strict'
+
 const Antl = use('Antl')
 class Sample {
-    get rules () {
+    get rules() {
         return {
             name: 'required',
             email: 'required'
         }
     }
 
-    get messages () {
+    get messages() {
         return {
             'name.required': Antl.formatMessage('sample-validator.user.required.name'),
             'email.required': Antl.formatMessage('sample-validator.user.required.name')
         }
     }
 
-    get validateAll () {
+    get validateAll() {
         return true
     }
 
-    async authorize () {
+    async authorize() {
         // Use the model that has the policy needed
         // return user.can('view', '<model>')
     }

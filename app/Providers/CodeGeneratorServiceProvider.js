@@ -1,7 +1,7 @@
 const { ServiceProvider } = require('@adonisjs/fold')
 
 class CodeGeneratorServiceProvider extends ServiceProvider {
-    register () {
+    register() {
         const Config = use('Config')
         let generatorConfig = Config.get('generator')
 
@@ -18,7 +18,7 @@ class CodeGeneratorServiceProvider extends ServiceProvider {
             const CodeGeneratorPatternManager = use('CodeGeneratorPatternManager')
 
             return new CodeGenerator(
-                CodeGeneratorPatternManager,
+                CodeGeneratorPatternManager
             )
         })
     }
@@ -27,9 +27,7 @@ class CodeGeneratorServiceProvider extends ServiceProvider {
         const CodeGeneratorPatternManager = use('CodeGeneratorPatternManager')
         const KadouPattern = use('App/Services/KadouPattern')
 
-        CodeGeneratorPatternManager.extendDriver('kadou', (config, randomConfig) => {
-            return new KadouPattern(config, randomConfig)
-        })
+        CodeGeneratorPatternManager.extendDriver('kadou', (config, randomConfig) => new KadouPattern(config, randomConfig))
     }
 }
 
