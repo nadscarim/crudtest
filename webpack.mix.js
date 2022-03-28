@@ -17,6 +17,7 @@ mix
     .sourceMaps(false)
     .react('resources/assets/js/app.js', 'dist/')
     .sass('resources/assets/sass/app.scss', 'dist/')
+    .react('resources/assets/js/main/home-app.js', 'dist/home.js')
 
 // Full API
 // mix.js(src, output);

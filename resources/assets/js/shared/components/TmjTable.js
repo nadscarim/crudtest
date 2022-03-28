@@ -13,6 +13,8 @@ class TmjTable extends React.Component {
         this.state = {
             loading: false
         }
+
+        this.ref = this.ref.bind(this)
     }
 
     ref(tableInstance) {
@@ -38,6 +40,10 @@ class TmjTable extends React.Component {
         }, 500)
     }
 
+    componentWillUnmount() {
+        clearTimeout(this.timeout)
+    }
+
     render() {
         // let columns = _getColumns()
         return (
@@ -49,9 +55,9 @@ class TmjTable extends React.Component {
                 // column definition
                 columns={this.props.columns}
                 // checking if it is loading
-                loading={this.loading}
+                loading={this.state.loading}
                 // handling ref of react table
-                ref={this.ref.bind(this)}
+                ref={this.ref}
                 // handling of fetching of data
                 onFetchData={this.fetchData.bind(this, this.props.onFetchData)}
                 // it means we wil handle data in server side
@@ -59,7 +65,10 @@ class TmjTable extends React.Component {
                 defaultPageSize={10}
                 filterable
 
+                getTbodyProps={this.props.getTbodyProps}
                 // text translation
+                showPageSizeOptions={this.props.showPageSizeOptions}
+                // show/hide page size option
                 previousText={translation.prev}
                 nextText={translation.next}
                 loadingText={translation.loading}
@@ -78,7 +87,9 @@ TmjTable.propTypes = {
     pages: PropTypes.number,
     columns: PropTypes.arrayOf(PropTypes.object),
     getTableInstance: PropTypes.func,
-    onFetchData: PropTypes.func
+    onFetchData: PropTypes.func,
+    getTbodyProps: PropTypes.func,
+    showPageSizeOptions: PropTypes.bool
 }
 
 export default TmjTable

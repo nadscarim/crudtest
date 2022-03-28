@@ -1,0 +1,15 @@
+@layout('shared.layouts.master')
+
+@section('styles')
+  {{ style('dist/task.css') }}
+@endsection
+
+@section('content')
+  <div id="root"></div>
+@endsection
+
+@section('scripts')
+  {{script('home/translation.js')}}
+  {{--  {{script('foobar/config.js')}}  --}}
+  {{script('dist/home.js')}}
+@endsection
