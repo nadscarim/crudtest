@@ -9,7 +9,7 @@ export const setModuleState = (payload) => async (dispatch) => {
     })
 }
 
-export const getTasks = (params) => async (dispatch) => {
+export const getTasks = () => async (dispatch) => {
     const response = await axios.post('/home/get')
 
     const {
