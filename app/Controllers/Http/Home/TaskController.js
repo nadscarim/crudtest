@@ -3,9 +3,8 @@
 const Task = use('App/Models/DB/Task')
 
 class TaskController {
-    async fetchData({ response, request }) {
+    async fetchData({ response }) {
         try {
-            const params = request.all()
             const getTask = await Task
                 .query()
                 .fetch()

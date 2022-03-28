@@ -33,7 +33,7 @@ const LoginContainer = () => {
 
     const updateState = (item) => dispatch(setModuleState({ ...item }))
 
-    const fetchData = (params) => dispatch(getTasks(params))
+    const fetchData = () => dispatch(getTasks())
 
     useEffect(() => {
         fetchData()
